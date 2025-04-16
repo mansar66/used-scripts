@@ -1,0 +1,35 @@
+PowerShell Method (Recommended)
+🔹 Step 1: Open PowerShell as Administrator
+Press Win + X > Click on Windows Terminal (Admin) or PowerShell (Admin).
+
+🔹 Step 2: Check which RSAT tools are available
+powershell
+Copy
+Edit
+Get-WindowsCapability -Online | Where-Object Name -like "RSAT*"
+This shows a list of all RSAT tools you can install.
+
+🔹 Step 3: Install a specific RSAT tool
+For example, to install Active Directory tools, run:
+
+powershell
+Copy
+Edit
+Add-WindowsCapability -Online -Name "Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0"
+Some popular RSAT tools:
+
+
+Tool Name	PowerShell Name
+Active Directory Users & Computers	Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
+DNS Server Tools	Rsat.Dns.Tools~~~~0.0.1.0
+DHCP Server Tools	Rsat.Dhcp.Tools~~~~0.0.1.0
+Group Policy Management	Rsat.GroupPolicy.Management.Tools~~~~0.0.1.0
+File Services Tools	Rsat.FileServices.Tools~~~~0.0.1.0
+Certificate Services Tools	Rsat.CertificateServices.Tools~~~~0.0.1.0
+🔹 Step 4: (Optional) Install all RSAT tools:
+powershell
+Copy
+Edit
+Get-WindowsCapability -Online | Where-Object Name -like "RSAT*" | ForEach-Object {
+    Add-WindowsCapability -Online -Name $_.Name
+}
