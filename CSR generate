@@ -1,0 +1,25 @@
+[Version]
+Signature="$Windows NT$"
+
+[NewRequest]
+Subject = "CN=dc01.cas.gov.ae, OU=IT, O=YourCompany, L=Dubai, S=Dubai, C=AE"
+KeySpec = 1
+KeyLength = 2048
+Exportable = TRUE
+MachineKeySet = TRUE
+SMIME = FALSE
+PrivateKeyArchive = FALSE
+UserProtected = FALSE
+ProviderName = "Microsoft RSA SChannel Cryptographic Provider"
+ProviderType = 12
+RequestType = PKCS10
+HashAlgorithm = sha256
+KeyUsage = 0xa0
+
+[Extensions]
+2.5.29.17 = "{text}"
+_continue_ = "dns=dc01.cas.gov.ae&"
+_continue_ = "dns=cas.gov.ae"
+
+[RequestAttributes]
+CertificateTemplate = WebServer
