@@ -1,0 +1,12 @@
+1. Extend Veeam Backup to FedNet
+Deploy a Veeam Backup Proxy or Veeam Backup Agent in the FedNet environment.
+
+Ensure Veeam is configured to back up FedNet VMs or physical servers.
+
+You can back up to:
+
+FedNet-local storage (faster)
+
+A central backup repository on-prem (for DR)
+
+External storage or Veeam Cloud Connect (for long-term offsite)
